@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Фитнес-клуб — клиенты</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Фитнес-клуб: учёт клиентов</h1>
+  </header>
+
+  <main>
+    <section class="filters">
+      <input id="searchName" type="text" placeholder="Поиск по ФИО">
+      <select id="filterStatus">
+        <option value="">Все статусы</option>
+        <option value="Активен">Активен</option>
+        <option value="Просрочен">Просрочен</option>
+        <option value="Заморожен">Заморожен</option>
+      </select>
+      <button id="btnAdd">Добавить клиента</button>
+    </section>
+
+    <section id="formSection" class="hidden">
+      <h2 id="formTitle">Новый клиент</h2>
+      <input type="hidden" id="clientId">
+      <label>Номер карты <input id="cardNumber" required></label>
+      <label>ФИО <input id="fullName" required></label>
+      <label>Телефон <input id="phone" required></label>
+      <label>Email <input id="email" type="email"></label>
+      <label>Дата рождения <input id="birthDate" type="date"></label>
+      <label>Дата регистрации <input id="registrationDate" type="date" required></label>
+      <label>Тип абонемента
+        <select id="membershipType">
+          <option>Месячный</option>
+          <option>Годовой</option>
+          <option>Разовый</option>
+        </select>
+      </label>
+      <label>Статус
+        <select id="membershipStatus">
+          <option>Активен</option>
+          <option>Просрочен</option>
+          <option>Заморожен</option>
+        </select>
+      </label>
+      <label>Дата окончания <input id="membershipEnd" type="date"></label>
+      <div class="actions">
+        <button id="btnSave">Сохранить</button>
+        <button id="btnCancel">Отмена</button>
+      </div>
+    </section>
+
+    <section id="listSection">
+      <table>
+        <thead>
+          <tr>
+            <th>Карта</th>
+            <th>ФИО</th>
+            <th>Телефон</th>
+            <th>Абонемент</th>
+            <th>Статус</th>
+            <th>Действия</th>
+          </tr>
+        </thead>
+        <tbody id="clientsTable"></tbody>
+      </table>
+    </section>
+
+    <section id="detailSection" class="hidden">
+      <h2>Детали клиента</h2>
+      <div id="clientDetails"></div>
+      <h3>История посещений</h3>
+      <div id="visitHistory"></div>
+      <button id="btnBack">Назад</button>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
